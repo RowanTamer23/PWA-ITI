@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Todo & Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#12121c">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    
+    <main class="app-container">
+        <header>
+            <h1>Tasks</h1>
+            <p>Stay focused, remember everything.</p>
+        </header>
+
+        <form id="add-form" class="add-todo">
+            <div class="input-group">
+                <input type="text" id="todo-input" placeholder="What needs to be done?" required autocomplete="off">
+            </div>
+            <div class="input-group timer-group">
+                <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <input type="number" id="timer-input" placeholder="Mins" min="1" autocomplete="off">
+            </div>
+            <button type="submit" id="add-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+            </button>
+        </form>
+
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="active">Active</button>
+            <button class="filter-btn" data-filter="done">Done</button>
+        </div>
+
+        <ul class="todo-list" id="todo-list">
+            <!-- Todo items -->
+        </ul>
+    </main>
+
+    <!-- Notification Permission Toast -->
+    <div id="notification-toast" class="toast hidden">
+        <p>Please enable notifications for timers.</p>
+        <button id="enable-notif">Enable</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
